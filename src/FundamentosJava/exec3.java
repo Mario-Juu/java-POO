@@ -1,3 +1,5 @@
+package FundamentosJava;
+
 import java.util.Scanner;
 public class exec3 {
     public static void main(String[] args) {

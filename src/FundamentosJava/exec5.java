@@ -1,3 +1,5 @@
+package FundamentosJava;
+
 import java.util.Scanner;
 
 public class exec5 {
