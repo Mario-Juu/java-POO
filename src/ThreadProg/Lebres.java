@@ -48,6 +48,7 @@ public class Lebres extends Thread {
                 }
 
             }
+            Thread.yield();
         }
         while(distanciaPercorrida < DISTANCIA_TOTAL);
         setPosicao();
