@@ -1,5 +1,7 @@
 package ThreadProg;
 import java.util.Random;
+import java.util.concurrent.Semaphore;
+
 
 
 public class Lebres extends Thread {
@@ -13,6 +15,9 @@ public class Lebres extends Thread {
     private int DISTANCIA_TOTAL = 20;
     private int pulosTotais = 0;
 
+    //Declara um semáforo para controlar a entrada e saída das lebres na linha de chegada
+    private Semaphore semaforo = new Semaphore(1);
+
     //Construtor da classe
     public Lebres(String nome){
         this.nome = nome;
@@ -25,8 +30,16 @@ public class Lebres extends Thread {
 
     //Seta a posição da lebre com base na variável globao 'posicao'
     public void setPosicao(){
-        posicaoLebre += posicao;
-        System.out.println("=========== " + nome + " Chegou a linha de chegada na posição: " + posicaoLebre + " ===========");
+        try{
+            // O semáforo é utilizado para controlar a entrada e saída das lebres na linha de chegada.
+            // Isso garante que as lebres não cheguem simultaneamente à linha de chegada, o que poderia resultar em empates.
+            semaforo.acquire();
+            posicaoLebre += posicao;
+            System.out.println("=========== " + nome + " Chegou a linha de chegada na posição: " + posicaoLebre + " ===========");
+            semaforo.release();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -50,7 +63,7 @@ public class Lebres extends Thread {
                 System.out.println(nome + ": " + distanciaPercorrida);
                 System.out.println(nome + " Tamanho do pulo: " + tamanhoPulo);
                 try {
-                    Thread.sleep(350); // Simulação do tempo de pulo, diminui as chances de duas lebres chegarem simultaneamente
+                    Thread.sleep(300); // Simulação do tempo de pulo, diminui as chances de duas lebres chegarem simultaneamente
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
