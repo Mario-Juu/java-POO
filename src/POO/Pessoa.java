@@ -39,10 +39,10 @@ public class Pessoa {
     public double getAltura(){
         return this.altura;
     }
-    public void casar(Pessoa outraPessoa, Pessoa pessoa){
-        if(pessoa.conjuge == null && outraPessoa.conjuge == null){
-        outraPessoa.conjuge = pessoa;
-        pessoa.conjuge = outraPessoa;
+    public void casar(Pessoa outraPessoa){
+        if(this.conjuge == null && outraPessoa.conjuge == null){
+        outraPessoa.conjuge = this;
+        this.conjuge = outraPessoa;
         } else{
             System.out.println("Você não pode casar com alguém casado.");
         }
@@ -66,7 +66,7 @@ public class Pessoa {
         jose.setPeso(80.0);
         jose.setAltura(1.85);
 
-        maria.casar(jose, maria);
+        maria.casar(jose);
         maria.ehCasado();
         jose.ehCasado();
         System.out.println(maria.getNomeConjuge() + " " + jose.getNomeConjuge());

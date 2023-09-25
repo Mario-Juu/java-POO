@@ -7,12 +7,24 @@ public class Funcionario extends DecimalFormat {
     private double horasTrabalhadas;
     private double salarioHora;
     private int dependentes;
+    public static DecimalFormat df = new DecimalFormat();
 
     public Funcionario(String nome, double horasTrabalhadas, double salarioHora, int dependentes){
         this.nome = nome;
         this.horasTrabalhadas = horasTrabalhadas;
         this.salarioHora = salarioHora;
         this.dependentes = dependentes;
+    }
+    public Funcionario(String nome){
+        this.nome = nome;
+        horasTrabalhadas = 0;
+        salarioHora = 0;
+        dependentes = 0;
+    }
+    public Funcionario(){
+        horasTrabalhadas = 0;
+        salarioHora = 0;
+        dependentes = 0;
     }
 
     public boolean setNome(String nome){
@@ -84,7 +96,7 @@ public class Funcionario extends DecimalFormat {
     }
 
     public String toString(){
-        DecimalFormat df = new DecimalFormat();
+
         df.applyPattern("R$ #,##0.00");
         return "Nome: " + getNome() + ", Dependentes: " + getDependentes() + ", Sal. Hora: " + df.format(getSalarioHora()) + ", Qtd. Horas Trab: " + getHorasTrabalhadas() +
                 ", Sal. Bruto: " + df.format(salarioBruto()) + ", INSS: " + df.format(descontoINSS()) + ", IR: " + df.format(descontoIR()) + ", Sal. Liquido: " + df.format(salarioliquido());
