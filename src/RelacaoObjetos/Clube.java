@@ -15,7 +15,8 @@ public class Clube {
        socios = new ArrayList<Socio>();
     }
     public void addSocio(Socio socio){
-        socios.add(socio);
+        if(!(socios.contains(socio)))
+         socios.add(socio);
     }
     public void imprimirSocios(){
         System.out.println("Clube: " + nome);
