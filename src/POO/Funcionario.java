@@ -10,6 +10,9 @@ public class Funcionario extends DecimalFormat {
     public static DecimalFormat df = new DecimalFormat();
 
     public Funcionario(String nome, double horasTrabalhadas, double salarioHora, int dependentes){
+        if(nome.isBlank()){
+            throw new IllegalArgumentException("Nome não pode ser vazio.");
+        }
         this.nome = nome;
         this.horasTrabalhadas = horasTrabalhadas;
         this.salarioHora = salarioHora;
@@ -27,12 +30,11 @@ public class Funcionario extends DecimalFormat {
         dependentes = 0;
     }
 
-    public boolean setNome(String nome){
-        if(!nome.isBlank()){
-            this.nome = nome;
-            return true;
+    public void setNome(String nome){
+        if(nome.isBlank()){
+            throw new IllegalArgumentException("Nome não pode ser vazio.");
         }
-        return false;
+        this.nome = nome;
     }
 
     public boolean setHorasTrabalhadas(double horas){

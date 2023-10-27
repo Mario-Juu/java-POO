@@ -9,7 +9,7 @@ public class TurmasComAlunos_main {
         Aluno aluno3 = new Aluno(102, "Clara");
         Aluno aluno4 = new Aluno(103, "Thaiane");
         Aluno aluno5 = new Aluno(104, "Henrique");
-        Aluno aluno6 = new Aluno(105, "Matheus");
+        Aluno aluno6 = new Aluno(105, "Taiani");
 
         turma1.addAluno(aluno1);
         turma1.addAluno(aluno2);

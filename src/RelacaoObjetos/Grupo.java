@@ -3,11 +3,11 @@ package RelacaoObjetos;
 import java.util.ArrayList;
 
 public class Grupo {
-    private String nome;
+    private String nomeGrupo;
     private ArrayList<Membro> membros;
 
-    public Grupo(String nome){
-        this.nome = nome;
+    public Grupo(String nomeGrupo){
+        this.nomeGrupo = nomeGrupo;
         this.membros = new ArrayList<Membro>();
     }
 
@@ -15,7 +15,7 @@ public class Grupo {
         if(!(membros.contains(membro)))
             membros.add(membro);
         else
-            System.out.println("Membro " + membro.getNome() + " já está no grupo.");
+            System.out.println("Membro " + membro.getNomeMembro() + " já está no grupo.");
     }
 
     public int getQuantidadeMembros(){
@@ -23,9 +23,9 @@ public class Grupo {
     }
 
     public void imprimirMembros(){
-        System.out.println("Grupo: " + nome);
+        System.out.println("Grupo: " + nomeGrupo);
         for (Membro membro : membros) {
-            System.out.println("Nome: " + membro.getNome() + " | Número: " + membro.getNumero());
+            System.out.println("Nome: " + membro.getNomeMembro() + " | Número: " + membro.getNumero());
         }
     }
 }

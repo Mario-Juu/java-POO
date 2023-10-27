@@ -16,10 +16,9 @@ public class Funcionarios_main {
 
         System.out.println("\n =============================================== \n");
 
-        Funcionario fun2 = new Funcionario("Bia", 200, 12.50, 0);
+        Funcionario fun2 = new Funcionario("", 200, 12.50, 0);
         System.out.println(fun2.toString());
         System.out.println(fun2.setDependentes(-2));
-        System.out.println(fun2.setNome("Bianca"));
         System.out.println(fun2.toString());
         fun2.setDependentes(1);
         fun2.setSalarioHora(15);

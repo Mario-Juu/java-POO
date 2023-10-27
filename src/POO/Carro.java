@@ -6,6 +6,13 @@ public class Carro {
     private double combustivel;
     private int hodometro;
 
+    public boolean setPotencia(double potenciaA){
+        if(potenciaA > 0){
+            this.potencia = potenciaA;
+            return true;
+        }
+        return false;
+    }
     public Carro(String modelo, double potencia, double combustivel, int hodometro){
         if(!modelo.isBlank())
             this.modelo = modelo;
@@ -15,13 +22,6 @@ public class Carro {
             this.combustivel = combustivel;
         if(hodometro >= 0)
             this.hodometro = hodometro;
-    }
-    public boolean setPotencia(double potencia){
-        if(potencia > 0){
-            this.potencia = potencia;
-            return true;
-        }
-        return false;
     }
     public double getPotencia(){
         return potencia;

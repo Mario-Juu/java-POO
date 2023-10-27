@@ -1,15 +1,15 @@
 package RelacaoObjetos;
 public class Membro {
-    private String nome;
+    private String nomeMembro;
     private int numero;
 
-    public Membro(String nome, int numero){
-        this.nome = nome;
+    public Membro(String nomeMembro, int numero){
+        this.nomeMembro = nomeMembro;
         this.numero = numero;
     }
 
-    public String getNome(){
-        return nome;
+    public String getNomeMembro(){
+        return nomeMembro;
     }
     public int getNumero(){
         return numero;
