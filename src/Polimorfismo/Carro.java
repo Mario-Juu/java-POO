@@ -18,6 +18,7 @@ public class Carro extends Veiculo{
         this.portas = portas;
     }
 
+    @Override
     public float calculoIPVA(){
         float ipva = 0;
         if (tipoCarro.getTipo() == 1) {

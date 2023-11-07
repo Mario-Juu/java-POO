@@ -15,6 +15,8 @@ public class Moto extends Veiculo{
     public void setCilindradas(int cilindradas) {
         this.cilindradas = cilindradas;
     }
+
+    @Override
     public float calculoIPVA(){
         float ipva = 0;
         if(cilindradas >= 200)
