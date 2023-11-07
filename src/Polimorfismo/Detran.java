@@ -32,4 +32,13 @@ public class Detran {
             }
             return retorno.toString();
     }
+
+    public String toStringSemStringBuilder(){
+        String retorno = "Estado: " + estado;
+        retorno += "\nVeiculos: ";
+        for (Veiculo veiculo : veiculos) {
+            retorno += "\n" + veiculo;
+        }
+        return retorno;
+    }
 }

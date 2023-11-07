@@ -27,10 +27,7 @@ public class Moto extends Veiculo{
     @Override
     public String toString() {
         return "Moto{" +
-                "modelo='" + modelo +
-                ", ano=" + ano + '\'' +
-                ", placa='" + placa + '\'' +
-                ", valor=" + valor + '\'' +
+                super.toString() +
                 ", ipva=" + calculoIPVA() + '\'' +
                 ", cilindradas=" + cilindradas +
                 '}';

@@ -32,10 +32,7 @@ public class Carro extends Veiculo{
     @Override
     public String toString() {
         return "Carro{" +
-                "modelo='" + modelo +
-                ", ano=" + ano + '\'' +
-                ", placa='" + placa + '\'' +
-                ", valor=" + valor + '\'' +
+                super.toString() +
                 ", ipva=" + calculoIPVA() + '\'' +
                 ", portas=" + portas +
                 '}';

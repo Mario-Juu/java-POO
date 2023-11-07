@@ -1,7 +1,7 @@
 package Polimorfismo;
 
 public enum TipoCarro {
-    COMPRADO(1),ALUGADO(2);
+    PARTICULAR(1),ALUGADO(2);
     private int tipo;
 
     TipoCarro(int tipo) {
